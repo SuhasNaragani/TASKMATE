@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-img">TM</div>
+            TaskMate
+            <span class="tagline">Every service in your hand</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#" id="cartLink">Cart (<span id="cartCount">0</span>)</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="services">
+            <h2>Choose Your Service</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <span class="material-icons">cleaning_services</span>
+                    <h3>Cleaning</h3>
+                    <p>Professional cleaning services for your home.</p>
+                    <p class="price">$50/hour</p>
+                    <button class="book-button" onclick="addToCart('Cleaning', 50)">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <span class="material-icons">plumbing</span>
+                    <h3>Plumbing</h3>
+                    <p>Expert plumbing solutions for any issue.</p>
+                    <p class="price">$60/hour</p>
+                    <button class="book-button" onclick="addToCart('Plumbing', 60)">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <span class="material-icons">construction</span>
+                    <h3>Repair</h3>
+                    <p>Fast and reliable repair services.</p>
+                    <p class="price">$40/hour</p>
+                    <button class="book-button" onclick="addToCart('Repair', 40)">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <span class="material-icons">ac_unit</span>
+                    <h3>AC Repair</h3>
+                    <p>Keep your AC running efficiently.</p>
+                    <p class="price">$70/hour</p>
+                    <button class="book-button" onclick="addToCart('AC Repair', 70)">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <span class="material-icons">electrical_services</span>
+                    <h3>Electrical</h3>
+                    <p>Electrical fixes and installations for your home.</p>
+                    <p class="price">$80/hour</p>
+                    <button class="book-button" onclick="addToCart('Electrical', 80)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cartSection" class="cart-section" style="display:none;">
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <button onclick="checkout()" class="submit-button">Proceed to Checkout</button>
+        </section>
+
+        <section id="bookingSection" class="booking-section" style="display:none;">
+            <h2>Booking Details</h2>
+            <form id="bookingForm">
+                <label for="customerName">Name:</label>
+                <input type="text" id="customerName" required><br><br>
+
+                <label for="address">Address:</label>
+                <textarea id="address" rows="4" required></textarea><br><br>
+
+                <label for="paymentMethod">Payment Method:</label>
+                <select id="paymentMethod">
+                    <option value="creditCard">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="cash">Cash</option>
+                </select><br><br>
+
+                <button type="submit" class="submit-button">Confirm Booking</button>
+            </form>
+        </section>
+
+        <section class="contact-info">
+            <h2>Contact Us</h2>
+            <p><strong>Email:</strong> support@taskmate.com</p>
+            <p><strong>Phone:</strong> +1 234 567 890</p>
+            <p><strong>Address:</strong> 123 Service St, Cityville, State, 12345</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TaskMate. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
